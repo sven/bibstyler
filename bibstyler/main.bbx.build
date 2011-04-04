@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Style-Source: /usr/share/texmf/tex/latex/biblatex/bbx/standard.bbx
+#
+# VIM Highlighting
+# vim: set filetype=tex :
+#
+# Autor,  \emph{Title}, Verlag,    \bf{Jahr}, \emph{Volume} (Nummer), Seitenzahlen
+# Author, \emph{Title}, Publisher, \bf{Year}, \emph{Volume} (Number), Pages
+
+STYLES=( article book booklet collection inbook incollection inproceedings \
+	 manual misc online patent periodical proceedings report thesis    \
+         unpublished shorthands set )
+
+# copy template to real file
+cp bibstyler/main.bbx.tmpl tmp/main.bbx
+
+# create styles
+for STYLE in "${STYLES[@]}"; do
+    echo "Creating BibTex-Style: $STYLE"
+    cat >>tmp/main.bbx <<_
+
+\DeclareFieldFormat[$STYLE]{year}{\bf{#1}}
+\DeclareFieldFormat[$STYLE]{title}{\emph{#1}}
+\DeclareFieldFormat[$STYLE]{volume}{\emph{#1}}
+\DeclareFieldFormat[$STYLE]{volumes}{\emph{#1}}
+\DeclareFieldFormat[$STYLE]{number}{\emph{#1}}
+\DeclareFieldFormat[$STYLE]{series}{\emph{#1}}
+\DeclareFieldFormat[$STYLE]{pages}{#1}
+
+\DeclareBibliographyDriver{$STYLE}{%
+    \usebibmacro{bibindex}%
+    \usebibmacro{begentry}%
+    \usebibmacro{author/editor+others/translator+others}%
+    \setunit{\labelnamepunct}\newblock
+    \usebibmacro{title}%
+    \newunit\newblock
+    \usebibmacro{publisher+location+date}%
+    \newunit\newblock
+    \usebibmacro{doi+eprint+url}%
+    \newunit\newblock
+    \printfield{volumes}%
+    \newunit\newblock
+    \usebibmacro{series+number}%
+    \newunit\newblock
+    \usebibmacro{chapter+pages}%
+    \newunit\newblock
+    \usebibmacro{addendum+pubstate}%
+    \newunit\newblock
+    \usebibmacro{pageref}%
+    \usebibmacro{finentry}}
+
+_
+
+done
+
+echo "\endinput" >>tmp/main.bbx
+echo >>tmp/main.bbx
+

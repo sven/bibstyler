@@ -1,0 +1,38 @@
+Author Info
+-----------
+
+Author: Sven Bachmann <dev@mcbachmann.de>
+WWW:    http://www.mcbachmann.de
+Blog:   http://blog.mcbachmann.de
+
+
+Introduction
+------------
+
+Bibstyler is a simple script to generate all needed Biblatex styles (list at
+the bottom) with the same layout.
+
+Doesn't make sense? Should not every style has its own layout?
+
+In this case: no. This tool was written because some people from the Chemnitz
+University of Technology asked for a unique style of entries no matter what
+type of article, book, reporter etc. it is.
+
+
+Files
+-----
+
+Makefile                  - glue for LaTeX and Biblatex
+main.tex                  - example latex file
+literature.bib            - normal BibTex entry file
+bibstyler/main.bbx.build  - generator script for Biblatex-Style-File
+bibstyler/main.bbx.tmpl   - header for Biblatex-Style-File
+
+
+Currently supported Styles
+--------------------------
+
+article, book, booklet, collection, inbook, incollection, inproceedings,
+manual, misc, online, patent, periodical, proceedings, report, thesis,
+unpublished, shorthands, set
+

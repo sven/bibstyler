@@ -1,0 +1,17 @@
+% Source: /usr/share/texmf/tex/latex/biblatex/bbx/standard.bbx
+%
+% VIM Highlighting
+% vim: set filetype=tex :
+%
+% Autor,  \emph{Title}, Verlag,    \bf{Jahr}, \emph{Volume} (Nummer), Seitenzahlen
+% Author, \emph{Title}, Publisher, \bf{Year}, \emph{Volume} (Number), Pages
+
+\ProvidesFile{bibtex.bbx}[2011/04/04 v0.1 biblatex bibliography style]
+
+\RequireBibliographyStyle{numeric}
+
+\renewbibmacro*{date}{\printfield{year}}
+\renewcommand{\finalnamedelim}{, }
+\renewcommand{\labelnamepunct}{, }
+\renewcommand{\newunitpunct}{, }
+

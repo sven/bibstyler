@@ -1,0 +1,43 @@
+\documentclass[a4paper,12pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{csquotes}
+
+% BibTex
+\usepackage[%
+    bibencoding=utf8,
+    bibstyle=tmp/main,
+    firstinits=true,
+    labelnumber=true,
+]{biblatex}
+\newcommand\lit[1]{Citation \cite{#1}}
+\bibliography{../literature}
+
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This is a short example on how to use the bibstyler-Template. \\
+Now we referer to the following literature:
+
+\begin{itemize}
+ \item{\bf Trends in Theoretical Computer Science \lit{boerger_trends83}}
+ \item{\bf Science of Computer Programming \lit{SCP}}
+ \item{\bf An Explanation of Splaying \lit{Subramanian:1994:ES}}
+ \item{\bf Computer Science: The Nature of a Good and Accreditable Computer Science Program \lit{Martin96}}
+\end{itemize}
+
+\newpage
+
+% Literaturverzeichnis
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Literature}
+\printbibliography[maxnames=99]
+
+\end{document}
+
