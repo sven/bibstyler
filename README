@@ -12,11 +12,19 @@ Introduction
 Bibstyler is a simple script to generate all needed Biblatex styles (list at
 the bottom) with the same layout.
 
-Doesn't make sense? Should not every style has its own layout?
+Doesn't make sense? Should not every style have its own layout?
 
 In this case: no. This tool was written because some people from the Chemnitz
 University of Technology asked for a unique style of entries no matter what
 type of article, book, reporter etc. it is.
+
+
+Build Example
+-------------
+
+Assuming you have a fully working LaTeX environment and you know how to add
+packages like biblatex just enter 'make' on the commandline and the example
+PDF-File should be compiled and opened with 'evince'.
 
 
 Files
