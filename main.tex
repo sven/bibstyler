@@ -12,6 +12,7 @@
     labelnumber=true,
 ]{biblatex}
 \newcommand\lit[1]{Citation \cite{#1}}
+\newcommand\litsup[1]{Citation \supercite{#1}}
 \bibliography{../literature}
 
 
@@ -29,6 +30,15 @@ Now we referer to the following literature:
  \item{\bf Science of Computer Programming \lit{SCP}}
  \item{\bf An Explanation of Splaying \lit{Subramanian:1994:ES}}
  \item{\bf Computer Science: The Nature of a Good and Accreditable Computer Science Program \lit{Martin96}}
+\end{itemize}
+
+And the same example with $\backslash$litsup:
+
+\begin{itemize}
+ \item{\bf Trends in Theoretical Computer Science \litsup{boerger_trends83}}
+ \item{\bf Science of Computer Programming \litsup{SCP}}
+ \item{\bf An Explanation of Splaying \litsup{Subramanian:1994:ES}}
+ \item{\bf Computer Science: The Nature of a Good and Accreditable Computer Science Program \litsup{Martin96}}
 \end{itemize}
 
 \newpage
